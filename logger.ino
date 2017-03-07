@@ -7,7 +7,7 @@
 // A simple data logger for the Arduino analog pins
 
 // how many milliseconds between grabbing data and logging it. 1000 ms is once a second
-#define LOG_INTERVAL  1000 // mills between entries (reduce to take more/faster data)
+#define LOG_INTERVAL  16 * 1000 // Time interval in milliseconds (number of seconds * 1000 = interval) (reduce to take more/faster data)
 
 // how many milliseconds before writing the logged data permanently to disk
 // set it to the LOG_INTERVAL to write each time (safest)
@@ -29,7 +29,6 @@ byte mac[] = { 0xD4, 0x28, 0xB2, 0xFF, 0xA0, 0xA1 }; // Must be unique on local 
 // ThingSpeak Settings
 char thingSpeakAddress[] = "api.thingspeak.com";
 String writeAPIKey = "1847F2E71UC58A0V";
-const int updateThingSpeakInterval = 16 * 1000;      // Time interval in milliseconds to update ThingSpeak (number of seconds * 1000 = interval)
 
 // Variable Setup
 long lastConnectionTime = 0; 
@@ -119,9 +118,6 @@ void setup(void)
   Serial.println("millis,stamp,datetime,light,temp,vcc");
 #endif //ECHO_TO_SERIAL
  
-  // If you want to set the aref to something other than 5v
-  analogReference(EXTERNAL);
-
     // Start Ethernet on Arduino
   startEthernet();
 }
@@ -179,19 +175,6 @@ void loop(void)
   Serial.print(now.second(), DEC);
   Serial.print('"');
 #endif //ECHO_TO_SERIAL
-
-  // analogRead(photocellPin);
-  // delay(10); 
-  // int photocellReading = analogRead(photocellPin);  
-  
-  // analogRead(tempPin); 
-  // delay(10);
-  // int tempReading = analogRead(tempPin);    
-  
-  // // converting that reading to voltage, for 3.3v arduino use 3.3, for 5.0, use 5.0
-  // float voltage = tempReading * aref_voltage / 1024;  
-  // float temperatureC = (voltage - 0.5) * 100 ;
-  // float temperatureF = (temperatureC * 9 / 5) + 32;
   
   // Read value from Analog Input Pin 0
   String analogValue0 = String(analogRead(A0), DEC);
@@ -235,7 +218,7 @@ void loop(void)
   }
   
   // Update ThingSpeak
-  if(!client.connected() && (millis() - lastConnectionTime > updateThingSpeakInterval))
+  if(!client.connected())
   {
     updateThingSpeak("field1="+analogValue0); // "field1="+analogValue0+"field2="+analogValue1
   }
