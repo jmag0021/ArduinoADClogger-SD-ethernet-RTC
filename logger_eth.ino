@@ -41,12 +41,6 @@ EthernetClient client;
 // Initialize Arduino RTC
 RTC_DS3231 RTC; // define the Real Time Clock object
 
-// for the data logging shield, we use digital pin 10 for the SD cs line
-const int chipSelect = 10;
-
-// the logging file
-File logfile;
-
 void error(char *str)
 {
   Serial.print("error: ");
@@ -67,53 +61,7 @@ void setup(void)
   pinMode(redLEDpin, OUTPUT);
   pinMode(greenLEDpin, OUTPUT);
   
-#if WAIT_TO_START
-  Serial.println("Type any character to start");
-  while (!Serial.available());
-#endif //WAIT_TO_START
 
-  // initialize the SD card
-  Serial.print("Initializing SD card...");
-  // make sure that the default chip select pin is set to
-  // output, even if you don't use it:
-  pinMode(10, OUTPUT);
-  
-  // see if the card is present and can be initialized:
-  if (!SD.begin(chipSelect)) {
-    error("Card failed, or not present");
-  }
-  Serial.println("card initialized.");
-  
-  // create a new file
-  char filename[] = "LOGGER00.CSV";
-  for (uint8_t i = 0; i < 100; i++) {
-    filename[6] = i/10 + '0';
-    filename[7] = i%10 + '0';
-    if (! SD.exists(filename)) {
-      // only open a new file if it doesn't exist
-      logfile = SD.open(filename, FILE_WRITE); 
-      break;  // leave the loop!
-    }
-  }
-  
-  if (! logfile) {
-    error("couldnt create file");
-  }
-  
-  Serial.print("Logging to: ");
-  Serial.println(filename);
-
-  // connect to RTC
-  Wire.begin();  
-  if (!RTC.begin()) {
-    logfile.println("RTC failed");
-#if ECHO_TO_SERIAL
-    Serial.println("RTC failed");
-#endif  //ECHO_TO_SERIAL
-  }
-  
-
-  logfile.println("millis,stamp,datetime,ADC0");    
 #if ECHO_TO_SERIAL
   Serial.println("millis,stamp,datetime,ADC0");
 #endif //ECHO_TO_SERIAL
@@ -133,8 +81,6 @@ void loop(void)
   
   // log milliseconds since starting
   uint32_t m = millis();
-  logfile.print(m);           // milliseconds since start
-  logfile.print(", ");    
 #if ECHO_TO_SERIAL
   Serial.print(m);         // milliseconds since start
   Serial.print(", ");  
@@ -143,21 +89,6 @@ void loop(void)
   // fetch the time
   now = RTC.now();
   // log time
-  logfile.print(now.unixtime()); // seconds since 1/1/1970
-  logfile.print(", ");
-  logfile.print('"');
-  logfile.print(now.year(), DEC);
-  logfile.print("/");
-  logfile.print(now.month(), DEC);
-  logfile.print("/");
-  logfile.print(now.day(), DEC);
-  logfile.print(" ");
-  logfile.print(now.hour(), DEC);
-  logfile.print(":");
-  logfile.print(now.minute(), DEC);
-  logfile.print(":");
-  logfile.print(now.second(), DEC);
-  logfile.print('"');
 #if ECHO_TO_SERIAL
   Serial.print(now.unixtime()); // seconds since 1/1/1970
   Serial.print(", ");
@@ -180,18 +111,6 @@ void loop(void)
   String analogValue0 = String(analogRead(A0), DEC);
   //String analogValue1 = String(analogRead(A1), DEC);
 
-  logfile.print(", ");    
-  logfile.print(analogValue0);
-  //logfile.print(", ");    
-  //logfile.print(analogValue1);
-#if ECHO_TO_SERIAL
-  logfile.print(", ");    
-  logfile.print(analogValue0);
-  //logfile.print(", ");    
-  //logfile.print(analogValue1);
-#endif //ECHO_TO_SERIAL
-
-  logfile.println();
 #if ECHO_TO_SERIAL
   Serial.println();
 #endif // ECHO_TO_SERIAL
@@ -203,10 +122,6 @@ void loop(void)
   if ((millis() - syncTime) < SYNC_INTERVAL) return;
   syncTime = millis();
   
-  // blink LED to show we are syncing data to the card & updating FAT!
-  digitalWrite(redLEDpin, HIGH);
-  logfile.flush();
-  digitalWrite(redLEDpin, LOW);
 
   // Disconnect from ThingSpeak
   if (!client.connected() && lastConnected)
