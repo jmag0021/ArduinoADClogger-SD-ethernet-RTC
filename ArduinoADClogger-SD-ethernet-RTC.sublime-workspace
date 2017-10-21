@@ -1,0 +1,480 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"min",
+				"minute"
+			],
+			[
+				"d",
+				"define\tArduino Macro define"
+			],
+			[
+				"vol",
+				"voltage"
+			],
+			[
+				"an",
+				"analogRead\tArduino analogRead"
+			],
+			[
+				"temperat",
+				"temperatures"
+			],
+			[
+				"re",
+				"return"
+			],
+			[
+				"pr",
+				"print"
+			],
+			[
+				"Tem",
+				"TempCount"
+			],
+			[
+				"noT",
+				"noTempVal"
+			],
+			[
+				"start",
+				"startSDcard"
+			],
+			[
+				"file",
+				"filename"
+			],
+			[
+				"sen",
+				"sensorValue0"
+			],
+			[
+				"print",
+				"println"
+			],
+			[
+				"res",
+				"resValue"
+			],
+			[
+				"de",
+				"delay\tArduino delay()"
+			],
+			[
+				"th",
+				"thisChannel"
+			],
+			[
+				"cons",
+				"const"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "ADC_Temp_Logger_clean/ADC_Temp_Logger_clean.ino",
+			"settings":
+			{
+				"buffer_size": 6064,
+				"encoding": "UTF-8",
+				"line_ending": "Windows"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+		[
+			[
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					""
+				],
+				[
+					"Packages/C++/C++ Single File.sublime-build",
+					"Run"
+				]
+			],
+			[
+				"Packages/C++/C++ Single File.sublime-build",
+				"Run"
+			]
+		]
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"last_filter": "Package Control: ",
+		"selected_items":
+		[
+			[
+				"Package Control: ",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: in",
+				"Package Control: Install Package"
+			],
+			[
+				"list",
+				"Package Control: List Packages"
+			],
+			[
+				"sync",
+				"Sync Settings: Download"
+			],
+			[
+				"syn",
+				"Sync Settings: Show Logs"
+			],
+			[
+				"create",
+				"Sync Settings: Create and Upload"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			]
+		],
+		"width": 432.0
+	},
+	"console":
+	{
+		"height": 126.0,
+		"history":
+		[
+			"ls",
+			"dir",
+			"./a.out",
+			"cd \"$env:appdata\\Sublime Text 3\\Packages\\\"",
+			"import urllib.request,os,hashlib; h = '2915d1851351e5ee549c20394736b442' + '8bc59f460fa1548d1514676163dafc88'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/C/Users/magri/Documents/ArduinoADClogger-SD-ethernet-RTC",
+		"/C/Users/magri/Documents/ArduinoADClogger-SD-ethernet-RTC/ADC_Temp_Logger",
+		"/C/Users/magri/Documents/ArduinoADClogger-SD-ethernet-RTC/ADC_Temp_Logger_clean",
+		"/C/Users/magri/Documents/ArduinoADClogger-SD-ethernet-RTC/ethernet_only",
+		"/C/Users/magri/Documents/ArduinoADClogger-SD-ethernet-RTC/SDcard_only",
+		"/C/Users/magri/Documents/ArduinoADClogger-SD-ethernet-RTC/TempDS18B20_only",
+		"/C/Users/magri/Documents/ArduinoADClogger-SD-ethernet-RTC/ThingSpeak_only"
+	],
+	"file_history":
+	[
+		"/C/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/Stream.h",
+		"/C/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/Print.h",
+		"/C/Users/magri/Documents/ArduinoADClogger-SD-ethernet-RTC/ADC_Temp_Logger_clean/ADC_Temp_Logger_clean.ino",
+		"/C/Users/magri/Documents/ArduinoADClogger-SD-ethernet-RTC/ADC_Temp_Logger/ADC_Temp_Logger.ino",
+		"/C/Users/magri/Downloads/feeds (2).csv",
+		"/C/Users/magri/Downloads/feeds (1).csv",
+		"/C/Users/magri/Downloads/feed.csv",
+		"/C/Users/magri/Downloads/1.csv",
+		"/C/Users/magri/Downloads/feeds.csv",
+		"/C/Users/magri/Documents/ArduinoADClogger-SD-ethernet-RTC/TempDS18B20_only/TempDS18B20_only.ino",
+		"/C/Users/magri/Documents/ArduinoADClogger-SD-ethernet-RTC/libraries/DallasTemperature-3.7.6/DallasTemperature.h",
+		"/C/Users/magri/Documents/ArduinoADClogger-SD-ethernet-RTC/ThingSpeak_only/ThingSpeak_only.ino",
+		"/C/Users/magri/Documents/ArduinoADClogger-SD-ethernet-RTC/ThingSpeak_only/ThingSpeak_only_AVR_MEGA2560_atmega2560.hex",
+		"/C/Users/magri/Documents/ArduinoADClogger-SD-ethernet-RTC/SDcard_only/SDcard_only.ino",
+		"/C/Users/magri/Documents/ArduinoADClogger-SD-ethernet-RTC/RTC_only/RTC_only.ino",
+		"/C/Users/magri/Documents/ArduinoADClogger-SD-ethernet-RTC/ethernet_only/ethernet_only.ino",
+		"/C/Users/magri/Documents/ArduinoADClogger-SD-ethernet-RTC/libraries/DS3231/DS3231.h",
+		"/C/Users/magri/Documents/ArduinoADClogger-SD-ethernet-RTC/RTC_only/RTC_only/RTC_only.ino",
+		"/C/Users/magri/Documents/Arduino/RTC/RTC.ino",
+		"/C/Users/magri/Documents/ArduinoADClogger-SD-ethernet-RTC/ethernet_only.ino",
+		"/C/Program Files (x86)/Arduino/examples/01.Basics/BareMinimum/BareMinimum.ino",
+		"/C/Program Files (x86)/Arduino/examples/01.Basics/Blink/Blink.ino",
+		"/C/Users/magri/Documents/ArduinoADClogger-SD-ethernet-RTC/ArduinoADClogger-SD-ethernet-RTC.sublime-project",
+		"/C/Users/magri/odrive/UNI_Gdrive/Documents/ReadMe.txt",
+		"/C/Users/magri/Desktop/desktop/Arduino/pzemmeter/pzemmeter.ino",
+		"/C/Users/magri/Desktop/desktop/Arduino/pzemmeter_thingspeak/pzemmeter_thingspeak.ino",
+		"/C/Users/magri/Desktop/desktop/Arduino/test_thingspeak/test_thingspeak.ino",
+		"/C/Users/magri/Desktop/desktop/Arduino/FSBrowser/FSBrowser.ino",
+		"/C/Users/magri/odrive/UNI_Gdrive/Documents/Arduino/DHT11_thingspeak/DHT11_thingspeak.ino",
+		"/C/Users/magri/odrive/UNI_Gdrive/Documents/Arduino/ajax/ajax.ino",
+		"/C/Users/magri/Documents/0001/style/landing.css",
+		"/C/Users/magri/odrive/UNI_Gdrive/Backups/Assignment/8255assign.vhd",
+		"/C/Users/magri/Desktop/desktop/Arduino/ajax/ajax.ino",
+		"/C/Users/magri/odrive/UNI_Gdrive/Backups/New Text Document.txt",
+		"/C/Users/magri/Documents/0001/app.js",
+		"/C/Users/magri/odrive/UNI_Gdrive/Backups/Instuctions.txt",
+		"/C/Users/magri/Downloads/nbody_assignment.tex",
+		"/C/Users/magri/Documents/0001/templates/register.html",
+		"/C/Users/magri/Desktop/desktop/BUGS.txt",
+		"/C/Users/magri/CLionProjects/myproj/CMakeLists.txt",
+		"/C/Users/magri/CLionProjects/untitled/CMakeLists.txt",
+		"/C/Windows/System32/drivers/etc/hosts",
+		"/C/Users/magri/Desktop/sublimerge_crack/sublimerge-auth.py",
+		"/C/Users/magri/Documents/MyProjects/BusinessWeb/dev/index.html",
+		"/C/Users/magri/Desktop/sublimerge_crack/sublimerge.py",
+		"/C/Users/magri/AppData/Local/Temp/Temp1_IEEEtran (1).zip/IEEEtran/IEEEtran.cls",
+		"/C/Users/magri/AppData/Local/Temp/Temp1_ieee-latex-conference-template.zip/conference_071817.tex",
+		"/C/Users/magri/Desktop/results/data_to_siu.txt",
+		"/C/Users/magri/AppData/Local/Temp/Temp1_results.zip/results/data_to_siu.txt",
+		"/C/Users/magri/odrive/UNI_Gdrive/Backups/VM_backup/macOS/ReadME.txt",
+		"/C/Users/magri/Desktop/OculusSDK/LICENSE.txt",
+		"/C/Program Files/HDK-Software-Suite/OSVR-Core/bin/Oculus_Rift_DK1.json",
+		"/C/Program Files/HDK-Software-Suite/OSVR-Core/bin/osvr_server_config.json",
+		"/C/Users/magri/odrive/UNI_Gdrive/My_Gdrive/_UNI/Thesis_2017/DDL_controller/ddlctrlr_xport.vhd",
+		"/C/Users/magri/odrive/UNI_Gdrive/Backups/VM_backup/macOS/All Tool (New)/All Tool (New)/Code for VMware.txt",
+		"/C/Users/magri/Desktop/OculusSDK/Doc/sdk_docs_have_moved.txt",
+		"/C/Users/magri/Desktop/rorc/Linux/timing.txt",
+		"/C/Users/magri/Desktop/rorc/rorc_date.h",
+		"/C/Users/magri/Desktop/rorc/rorc_aux.c",
+		"/C/Users/magri/Desktop/rorc/rorc_aux.h",
+		"/C/Users/magri/Desktop/rorc/rorc.h",
+		"/C/Users/magri/Desktop/rorc/physmem.h",
+		"/C/Users/magri/Desktop/rorc/Makefile",
+		"/C/Users/magri/Desktop/rorc/edicam_wr_reg.c",
+		"/C/Users/magri/Desktop/rorc/install_rorc_driver",
+		"/C/Users/magri/Desktop/rorc/edicam_version.h",
+		"/C/Users/magri/Desktop/rorc/edicam_reg.c",
+		"/C/Users/magri/Desktop/rorc/edicam_receive.c",
+		"/C/Users/magri/Desktop/rorc/edicam_receive.save",
+		"/C/Users/magri/Desktop/rorc/edicam_fw_refresh.c",
+		"/C/Users/magri/Desktop/rorc/drorc3_flash_programmer.c",
+		"/C/Users/magri/Desktop/rorc/drorc_regs.h",
+		"/C/Users/magri/Desktop/rorc/drorc_empty_ddlst.c",
+		"/C/Users/magri/Desktop/rorc/ddl_init_link.c",
+		"/C/Users/magri/Desktop/rorc/ddl_def.h",
+		"/C/Users/magri/Desktop/rorc/create_fw_pattern.c",
+		"/C/Users/magri/Desktop/rorc/create_dev_files",
+		"/C/Users/magri/Desktop/rorc/check_driver",
+		"/C/Users/magri/Desktop/rorc/S593X.h",
+		"/C/Users/magri/Desktop/rorc/rorc_status.c",
+		"/C/Users/magri/Desktop/rorc/rorc_send.c",
+		"/C/Users/magri/Desktop/rorc/rorc_reset.c",
+		"/C/Users/magri/Desktop/rorc/rorc_pop_fifo.c",
+		"/C/Users/magri/Desktop/rorc/rorc_push_fifo.c",
+		"/C/Users/magri/Desktop/rorc/rorc_loop.c",
+		"/C/Users/magri/Desktop/rorc/rorc_lib.h",
+		"/C/Users/magri/Desktop/rorc/rorc_find.c",
+		"/C/Users/magri/Desktop/rorc/rorc_lib.c",
+		"/C/Users/magri/Desktop/rorc/rorc_id.c",
+		"/C/Users/magri/Desktop/rorc/rorc_driver.h",
+		"/C/Users/magri/Desktop/rorc/rorc_create_rf.c",
+		"/C/Users/magri/Desktop/rorc/rorc_ddl.c",
+		"/C/Users/magri/Desktop/rorc/rorc_ddl.h",
+		"/C/Users/magri/Desktop/rorc/rorc_driver.c",
+		"/C/Users/magri/Desktop/new.txt",
+		"/C/Users/magri/Downloads/test1.bin",
+		"/C/Users/magri/Downloads/test (2).bin",
+		"/C/Users/magri/Downloads/srecord-1.63-win32/Readme-Windows.txt",
+		"/C/Users/magri/Downloads/srecord-1.63-win32/Readme.txt",
+		"/C/Users/magri/Downloads/Telegram Desktop/jmcl.txt",
+		"/C/Users/magri/odrive/UNI_Gdrive/Documents/UNI/Teaching/graduate/MNE3002/CodeExamples/divider.vhd",
+		"/C/Users/magri/odrive/UNI_Gdrive/Documents/UNI/Teaching/graduate/MNE3002/CodeExamples/runninglights.vhd",
+		"/C/Users/magri/odrive/UNI_Gdrive/My_Gdrive/_UNI/Thesis_2017/RORC/edicam_rorc_vers.2.2.12_2011.01.14/rorc/rorc_reset.c",
+		"/C/Users/magri/odrive/UNI_Gdrive/My_Gdrive/_UNI/Thesis_2017/TPCRCU2/rcu_testbench.r166/trunk/txt/dcs_siu_data.txt",
+		"/C/Users/magri/odrive/UNI_Gdrive/My_Gdrive/_UNI/Thesis_2017/TPCRCU2/rcu_testbench.r166/trunk/txt/data_to_siu.txt",
+		"/C/Users/magri/Desktop/HDL tutorials/FPGA-TCL-Scripting-tcl-scripts-2014-02-24/debounce_sim.tcl",
+		"/C/Users/magri/odrive/UNI_Gdrive/My_Gdrive/_UNI/Thesis_2017/RORC/HLT/README",
+		"/C/Users/magri/odrive/UNI_Gdrive/My_Gdrive/_UNI/Thesis_2017/TPCRCU2/rcu_testbench.r166/trunk/txt/script_dcs_rd_wr.txt",
+		"/C/Users/magri/Desktop/HDL tutorials/FPGA-TCL-Scripting-tcl-scripts-2014-02-24/debounce_default_wave.tcl",
+		"/C/Users/magri/odrive/UNI_Gdrive/My_Gdrive/_UNI/Thesis_2017/TPCRCU2/rcu_testbench.r166/trunk/txt/script_xoff.txt",
+		"/C/Users/magri/odrive/UNI_Gdrive/My_Gdrive/_UNI/Thesis_2017/TPCRCU2/rcu_testbench.r166/trunk/for_sim/tb_rcutop.vhd",
+		"/C/Users/magri/odrive/UNI_Gdrive/My_Gdrive/_UNI/Thesis_2017/TPCRCU2/rcu_testbench.r166/trunk/for_sim/tb_ctp_pkg.vhd",
+		"/C/Users/magri/odrive/UNI_Gdrive/My_Gdrive/_UNI/Thesis_2017/TPCRCU2/rcu_testbench.r166/trunk/rcu_sim.mpf",
+		"/C/Users/magri/odrive/UNI_Gdrive/My_Gdrive/_UNI/Thesis_2017/TPCRCU2/rcu_testbench.r166/trunk/rcu_sim.cr.mti",
+		"/C/Users/magri/odrive/UNI_Gdrive/My_Gdrive/_UNI/Thesis_2017/TPCRCU2/rcu_testbench.r166/trunk/txt/script.txt",
+		"/C/Users/magri/odrive/UNI_Gdrive/My_Gdrive/_UNI/Thesis_2017/RORC/HLT/HLT-OUT/trunk/ModelSim/modelsim.do",
+		"/C/Users/magri/odrive/UNI_Gdrive/My_Gdrive/_UNI/Thesis_2017/RORC/HLT/HLT-OUT/trunk/LS/run_1/test.tcl",
+		"/C/Users/magri/odrive/UNI_Gdrive/My_Gdrive/_UNI/Thesis_2017/RORC/HLT/HLT-OUT/trunk/vhdl/top_module.vhd",
+		"/C/Users/magri/odrive/UNI_Gdrive/My_Gdrive/_UNI/Thesis_2017/RORC/HLT/HLT-OUT/trunk/vhdl/ddl_siu_if.vhd",
+		"/C/Users/magri/odrive/UNI_Gdrive/My_Gdrive/_UNI/Thesis_2017/RORC/HLT/HLT-OUT/trunk/vhdl/pattern_gen.vhd",
+		"/C/Users/magri/odrive/UNI_Gdrive/My_Gdrive/_UNI/Thesis_2017/RORC/HLT/HLT-OUT/trunk/ModelSim/log.vhd",
+		"/C/Users/magri/odrive/UNI_Gdrive/My_Gdrive/_UNI/Thesis_2017/RORC/HLT/HLT-OUT/trunk/ModelSim/testbench.vhd",
+		"/C/Users/magri/odrive/UNI_Gdrive/My_Gdrive/_UNI/Thesis_2017/RORC/HLT/HLT-RORC/trunk/ModelSim/log.txt",
+		"/C/Users/magri/Desktop/HDL tutorials/FPGA-TCL-Scripting-tcl-scripts-2014-02-24/time_stamp.tcl",
+		"/C/Users/magri/odrive/UNI_Gdrive/My_Gdrive/_UNI/Thesis_2017/ttcrx_module_v2.1/sim/ttcrx_tb_pkg.vhd",
+		"/C/Users/magri/odrive/UNI_Gdrive/My_Gdrive/_UNI/Thesis_2017/ttcrx_module_v2.1/sim/_Log.txt",
+		"/C/Users/magri/odrive/UNI_Gdrive/My_Gdrive/_UNI/Thesis_2017/ttcrx_module_v2.1/sim/bitvis_setup.do",
+		"/C/Users/magri/odrive/UNI_Gdrive/My_Gdrive/_UNI/Thesis_2017/ttcrx_module_v2.1/sim/NOTE THAT PATHS MUST BE CORRECTED TO SIMULATE.txt"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"sensor",
+			"]);\n",
+			"ip"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "ADC_Temp_Logger_clean/ADC_Temp_Logger_clean.ino",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 6064,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								282,
+								282
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Arduino-like IDE/Arduino.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 26.0
+	},
+	"input":
+	{
+		"height": 38.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.cloudMQTT":
+	{
+		"height": 118.0
+	},
+	"output.exec":
+	{
+		"height": 180.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"output.stino_build_panel":
+	{
+		"height": 166.0
+	},
+	"output.stino_panel":
+	{
+		"height": 118.0
+	},
+	"pinned_build_system": "Packages/C++/C++ Single File.sublime-build",
+	"project": "ArduinoADClogger-SD-ethernet-RTC.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"C:\\Users\\magri\\Desktop\\OpenMP\\HelloWorld.cpp"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 272.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
