@@ -79,7 +79,7 @@
 			"file": "ADC_Temp_Logger_clean/ADC_Temp_Logger_clean.ino",
 			"settings":
 			{
-				"buffer_size": 6064,
+				"buffer_size": 6494,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -176,6 +176,7 @@
 	],
 	"file_history":
 	[
+		"/C/Users/magri/Documents/ArduinoADClogger-SD-ethernet-RTC/libraries/TimeAlarms/TimeAlarms.h",
 		"/C/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/Stream.h",
 		"/C/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/Print.h",
 		"/C/Users/magri/Documents/ArduinoADClogger-SD-ethernet-RTC/ADC_Temp_Logger_clean/ADC_Temp_Logger_clean.ino",
@@ -302,12 +303,11 @@
 		"/C/Users/magri/Desktop/HDL tutorials/FPGA-TCL-Scripting-tcl-scripts-2014-02-24/time_stamp.tcl",
 		"/C/Users/magri/odrive/UNI_Gdrive/My_Gdrive/_UNI/Thesis_2017/ttcrx_module_v2.1/sim/ttcrx_tb_pkg.vhd",
 		"/C/Users/magri/odrive/UNI_Gdrive/My_Gdrive/_UNI/Thesis_2017/ttcrx_module_v2.1/sim/_Log.txt",
-		"/C/Users/magri/odrive/UNI_Gdrive/My_Gdrive/_UNI/Thesis_2017/ttcrx_module_v2.1/sim/bitvis_setup.do",
-		"/C/Users/magri/odrive/UNI_Gdrive/My_Gdrive/_UNI/Thesis_2017/ttcrx_module_v2.1/sim/NOTE THAT PATHS MUST BE CORRECTED TO SIMULATE.txt"
+		"/C/Users/magri/odrive/UNI_Gdrive/My_Gdrive/_UNI/Thesis_2017/ttcrx_module_v2.1/sim/bitvis_setup.do"
 	],
 	"find":
 	{
-		"height": 40.0
+		"height": 26.0
 	},
 	"find_in_files":
 	{
@@ -350,20 +350,21 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6064,
+						"buffer_size": 6494,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								282,
-								282
+								989,
+								989
 							]
 						],
 						"settings":
 						{
-							"syntax": "Packages/Arduino-like IDE/Arduino.sublime-syntax"
+							"syntax": "Packages/Arduino-like IDE/Arduino.sublime-syntax",
+							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
 						"translation.y": 0.0,

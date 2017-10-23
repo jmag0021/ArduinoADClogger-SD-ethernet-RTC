@@ -7,9 +7,16 @@
 #include <DallasTemperature.h>
 // RTC time module DS3231 SCL>21 SDA>20
 #include <RTClib.h>
+#include "Time.h"
+#include "TimeAlarms.h"
 //
 // Initialize Arduino RTC
 RTC_DS3231 RTC;
+
+uint32_t syncProvider() { //function which sets up the RTC as the source of external time
+  return RTC.now().unixtime();
+}
+
 //
 // Local Network Settings
 byte mac[] = { 0xD4, 0x28, 0xB2, 0xFF, 0xA0, 0xA1 };
@@ -36,7 +43,7 @@ float PowerCount[noPowerVal];
 #define VOLTAGE_MAX 5.0
 #define VOLTAGE_MAXCOUNTS 1023.0
 #define resValue 1   // shunt value
-#define SampleTime 2 // value in minutes
+#define SampleTime 2 // value in seconds
 //
 File Logfile;
 DateTime current;
@@ -47,7 +54,11 @@ void setup() {
 	// Start Serial
 	Serial.begin(9600);
 	// Get current time from RTC
+	RTC.begin();
+	RTC.adjust(DateTime(__DATE__, __TIME__));//comment this out when the RTC has been set
 	current = RTC.now();
+  	setSyncProvider(syncProvider);   // the function to get the time from the RTC
+  	Alarm.timerRepeat(SampleTime, ReadLoop);           // timer for every Stime in seconds
 	// Initialize Ethernet
 	startEthernet();
 	// Initialize SDcard
@@ -60,15 +71,17 @@ void setup() {
 //
 // Main loop of program
 //
-void loop() {
-	if(current.minute()==SampleTime && current.second()==0) {
+void loop() { } 
+//
+// Alarm loop of program
+//
+void ReadLoop () {
 		Serial.println("!!!! MAIN LOOP STARTED ");
 		readADC();
 		readDallasTemp();
 		StoreToSD();
 		SendThings();
 		Serial.println("!!!! MAIN LOOP ENDED ");
-	}
 } 
 //
 // ThingSpeak Function
