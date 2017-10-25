@@ -4,6 +4,14 @@
 		"selected_items":
 		[
 			[
+				"pr",
+				"println"
+			],
+			[
+				"Dallas",
+				"DallasTemperature"
+			],
+			[
 				"min",
 				"minute"
 			],
@@ -26,10 +34,6 @@
 			[
 				"re",
 				"return"
-			],
-			[
-				"pr",
-				"print"
 			],
 			[
 				"Tem",
@@ -79,7 +83,7 @@
 			"file": "ADC_Temp_Logger_clean/ADC_Temp_Logger_clean.ino",
 			"settings":
 			{
-				"buffer_size": 6494,
+				"buffer_size": 7093,
 				"encoding": "UTF-8",
 				"line_ending": "Windows"
 			}
@@ -167,15 +171,13 @@
 	"expanded_folders":
 	[
 		"/C/Users/magri/Documents/ArduinoADClogger-SD-ethernet-RTC",
-		"/C/Users/magri/Documents/ArduinoADClogger-SD-ethernet-RTC/ADC_Temp_Logger",
-		"/C/Users/magri/Documents/ArduinoADClogger-SD-ethernet-RTC/ADC_Temp_Logger_clean",
-		"/C/Users/magri/Documents/ArduinoADClogger-SD-ethernet-RTC/ethernet_only",
+		"/C/Users/magri/Documents/ArduinoADClogger-SD-ethernet-RTC/RTC_only",
 		"/C/Users/magri/Documents/ArduinoADClogger-SD-ethernet-RTC/SDcard_only",
-		"/C/Users/magri/Documents/ArduinoADClogger-SD-ethernet-RTC/TempDS18B20_only",
 		"/C/Users/magri/Documents/ArduinoADClogger-SD-ethernet-RTC/ThingSpeak_only"
 	],
 	"file_history":
 	[
+		"/C/Users/magri/Documents/ArduinoADClogger-SD-ethernet-RTC/time_example/time_example.ino",
 		"/C/Users/magri/Documents/ArduinoADClogger-SD-ethernet-RTC/libraries/TimeAlarms/TimeAlarms.h",
 		"/C/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/Stream.h",
 		"/C/Program Files (x86)/Arduino/hardware/arduino/avr/cores/arduino/Print.h",
@@ -302,12 +304,11 @@
 		"/C/Users/magri/odrive/UNI_Gdrive/My_Gdrive/_UNI/Thesis_2017/RORC/HLT/HLT-RORC/trunk/ModelSim/log.txt",
 		"/C/Users/magri/Desktop/HDL tutorials/FPGA-TCL-Scripting-tcl-scripts-2014-02-24/time_stamp.tcl",
 		"/C/Users/magri/odrive/UNI_Gdrive/My_Gdrive/_UNI/Thesis_2017/ttcrx_module_v2.1/sim/ttcrx_tb_pkg.vhd",
-		"/C/Users/magri/odrive/UNI_Gdrive/My_Gdrive/_UNI/Thesis_2017/ttcrx_module_v2.1/sim/_Log.txt",
-		"/C/Users/magri/odrive/UNI_Gdrive/My_Gdrive/_UNI/Thesis_2017/ttcrx_module_v2.1/sim/bitvis_setup.do"
+		"/C/Users/magri/odrive/UNI_Gdrive/My_Gdrive/_UNI/Thesis_2017/ttcrx_module_v2.1/sim/_Log.txt"
 	],
 	"find":
 	{
-		"height": 26.0
+		"height": 40.0
 	},
 	"find_in_files":
 	{
@@ -321,6 +322,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"test",
 			"sensor",
 			"]);\n",
 			"ip"
@@ -350,15 +352,15 @@
 					"semi_transient": false,
 					"settings":
 					{
-						"buffer_size": 6494,
+						"buffer_size": 7093,
 						"regions":
 						{
 						},
 						"selection":
 						[
 							[
-								989,
-								989
+								2976,
+								2976
 							]
 						],
 						"settings":
@@ -367,7 +369,7 @@
 							"translate_tabs_to_spaces": false
 						},
 						"translation.x": 0.0,
-						"translation.y": 0.0,
+						"translation.y": 1566.0,
 						"zoom_level": 1.0
 					},
 					"stack_index": 0,
@@ -473,7 +475,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 272.0,
+	"side_bar_width": 241.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

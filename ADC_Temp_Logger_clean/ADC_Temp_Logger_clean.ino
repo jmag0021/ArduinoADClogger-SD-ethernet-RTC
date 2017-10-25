@@ -12,18 +12,17 @@
 //
 // Initialize Arduino RTC
 RTC_DS3231 RTC;
-
+//
 uint32_t syncProvider() { //function which sets up the RTC as the source of external time
-  return RTC.now().unixtime();
+	return RTC.now().unixtime();
 }
-
 //
 // Local Network Settings
 byte mac[] = { 0xD4, 0x28, 0xB2, 0xFF, 0xA0, 0xA1 };
 EthernetClient client;
 //
 // Dallas Temperature Sensor Settings
-OneWire ds18x20[] = { 3, 7 }; // Pin location
+OneWire ds18x20[] = { 3 }; // Pin location
 const int noTempVal = sizeof(ds18x20)/sizeof(OneWire);
 DallasTemperature sensor[noTempVal];
 float TempCount[noTempVal];
@@ -35,7 +34,7 @@ const int noChannels = sizeof(myChannelNumber);
 //
 // Analog sensor readout
 byte ADCsensors[] = {A0, A1, A2, A3, A4, A5};
-const int noPowerVal = sizeof(ADCsensors);
+const int noPowerVal = sizeof(ADCsensors)/sizeof(ADCsensors[0]);
 float voltage[noPowerVal];
 float PowerCount[noPowerVal];
 //
@@ -43,7 +42,7 @@ float PowerCount[noPowerVal];
 #define VOLTAGE_MAX 5.0
 #define VOLTAGE_MAXCOUNTS 1023.0
 #define resValue 1   // shunt value
-#define SampleTime 2 // value in seconds
+#define SampleTime 30 // value in seconds
 //
 File Logfile;
 DateTime current;
@@ -55,10 +54,13 @@ void setup() {
 	Serial.begin(9600);
 	// Get current time from RTC
 	RTC.begin();
-	RTC.adjust(DateTime(__DATE__, __TIME__));//comment this out when the RTC has been set
-	current = RTC.now();
-  	setSyncProvider(syncProvider);   // the function to get the time from the RTC
-  	Alarm.timerRepeat(SampleTime, ReadLoop);           // timer for every Stime in seconds
+	setSyncProvider(syncProvider);   // the function to get the time from the RTC
+	Alarm.timerRepeat(SampleTime, Repeats);            // timer for every 15 seconds    
+	Serial.println(" Program Started 7 ");
+	Serial.println("No of Temperature Sensors: ");
+	Serial.println(noTempVal);
+	Serial.println("No of Power Sensors: ");
+	Serial.println(noPowerVal);
 	// Initialize Ethernet
 	startEthernet();
 	// Initialize SDcard
@@ -71,47 +73,54 @@ void setup() {
 //
 // Main loop of program
 //
-void loop() { } 
+void  loop(){  
+	Serial.println(" main loop ");
+	Alarm.delay(1000); // wait one second between clock display
+}
 //
 // Alarm loop of program
 //
-void ReadLoop () {
-		Serial.println("!!!! MAIN LOOP STARTED ");
-		readADC();
-		readDallasTemp();
-		StoreToSD();
-		SendThings();
-		Serial.println("!!!! MAIN LOOP ENDED ");
-} 
+void Repeats(){
+	Serial.println("!!!! MAIN LOOP STARTED ");
+	current = RTC.now();
+	readADC();
+	readDallasTemp();
+	StoreToSD();
+	SendThings();
+	Serial.println("!!!! MAIN LOOP ENDED ");     
+}
 //
 // ThingSpeak Function
 //
 void SendThings() {
+	Serial.println("Starting ThingSpeak...");
 	long timeRead = millis();
 	char datetime [30] = "";
-	sprintf(datetime, "%04d-%02d-%02dT%02d:%02d:%02d", current.year(), current.month(), current.day(), current.hour() - 2, current.minute(), current.second());
+	sprintf(datetime, "%04d-%02d-%02dT%02d:%02d:%02d", current.year(), current.month(), current.day(), current.hour(), current.minute(), current.second());
 
 	Serial.println("Sending data to ThingSpeak...");
 	Serial.println();  
 
 	for (int thisPower = 0;  thisPower < noPowerVal;  thisPower++) {
 		ThingSpeak.setField(thisPower+1, PowerCount[thisPower]);
-		if (thisPower-1 == noPowerVal) {
-			ThingSpeak.setField(thisPower+1, timeRead);
-	  		ThingSpeak.setCreatedAt(datetime);
-	  		ThingSpeak.writeFields(myChannelNumber[0], myWriteAPIKey[0]);
+		Serial.println((thisPower+1));
+		if (thisPower+1 == noPowerVal) {
+			// ThingSpeak.setField((thisPower), timeRead);
+			// ThingSpeak.setCreatedAt(datetime);
+			ThingSpeak.writeFields(myChannelNumber[0], myWriteAPIKey[0]);
+			Serial.println("power fields done");
 		}
-	  }
-
+	}
 	for (int thisTemp = 0;  thisTemp < noTempVal;  thisTemp++) {
 		ThingSpeak.setField(thisTemp+1, TempCount[thisTemp]);
-		if (thisTemp-1 == noTempVal) {
-			ThingSpeak.setField(thisTemp+1, timeRead);
-	  		ThingSpeak.setCreatedAt(datetime);
-	  		ThingSpeak.writeFields(myChannelNumber[1], myWriteAPIKey[1]);
+		Serial.println((thisTemp+1));
+		if (thisTemp+1 == noTempVal) {
+			// ThingSpeak.setField((thisTemp), timeRead);
+			// ThingSpeak.setCreatedAt(datetime);
+			ThingSpeak.writeFields(myChannelNumber[1], myWriteAPIKey[1]);
+			Serial.println("temp fields done");
 		}
-	  }
-
+	}
 	Serial.println("ThingSpeak done");
 	Serial.println();  
 }
@@ -157,6 +166,7 @@ return filename;
 }
 //
 void StoreToSD() {
+	Serial.println("Storing to SD ");
 	Logfile=SD.open(getFileName(),FILE_WRITE);       //Will open and will write date
 	// if the file opened okay, write to it:
 	if(Logfile) {
@@ -188,22 +198,27 @@ void StoreToSD() {
 	    Serial.println("error opening ");
 	    Serial.print(getFileName());
 	}
+	Logfile.print("\n");
+	Logfile.close();
+	Serial.println("Storing to SD DONE !!! ");
 }
 //
 // DallasTemperature Functions
 //
 void startDallasTemp() {
 // Start up the library on all defined bus-wires
+Serial.println("Initializing DallasTemperature...");
   DeviceAddress deviceAddress;
   for (int i = 0; i < noTempVal; i++) {;
     sensor[i].setOneWire(&ds18x20[i]);
     sensor[i].begin();
     if (sensor[i].getAddress(deviceAddress, 0)) sensor[i].setResolution(deviceAddress, 12);
   }
+  Serial.println("DallasTemperature DONE !!!");
 }
 //
 void readDallasTemp() {
-	Serial.print("Requesting temperatures...");
+	Serial.println("Requesting temperatures...");
 	for (int i = 0; i < noTempVal; i++) {
 		sensor[i].requestTemperatures();
 	}
@@ -238,6 +253,6 @@ void readADC() {
 		Serial.println(PowerCount[i]);
 	}
 	Serial.println();
-	Serial.println("DONE reading temperatures");
+	Serial.println("DONE reading power");
 	Serial.println();
 }
