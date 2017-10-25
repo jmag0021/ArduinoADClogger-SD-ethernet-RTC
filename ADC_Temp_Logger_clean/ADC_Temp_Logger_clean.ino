@@ -95,8 +95,8 @@ void Repeats(){
 void SendThings() {
 	Serial.println("Starting ThingSpeak...");
 	long timeRead = millis();
-	char datetime [30] = "";
-	sprintf(datetime, "%04d-%02d-%02dT%02d:%02d:%02d", current.year(), current.month(), current.day(), current.hour(), current.minute(), current.second());
+	char datetime [35] = "";
+	sprintf(datetime, "%04d-%02d-%02dT%02d:%02d:%02d+02", current.year(), current.month(), current.day(), current.hour(), current.minute(), current.second());
 
 	Serial.println("Sending data to ThingSpeak...");
 	Serial.println();  
@@ -105,8 +105,8 @@ void SendThings() {
 		ThingSpeak.setField(thisPower+1, PowerCount[thisPower]);
 		Serial.println((thisPower+1));
 		if (thisPower+1 == noPowerVal) {
-			// ThingSpeak.setField((thisPower), timeRead);
-			// ThingSpeak.setCreatedAt(datetime);
+			ThingSpeak.setField((thisPower), timeRead);
+			ThingSpeak.setCreatedAt(datetime);
 			ThingSpeak.writeFields(myChannelNumber[0], myWriteAPIKey[0]);
 			Serial.println("power fields done");
 		}
@@ -115,8 +115,8 @@ void SendThings() {
 		ThingSpeak.setField(thisTemp+1, TempCount[thisTemp]);
 		Serial.println((thisTemp+1));
 		if (thisTemp+1 == noTempVal) {
-			// ThingSpeak.setField((thisTemp), timeRead);
-			// ThingSpeak.setCreatedAt(datetime);
+			ThingSpeak.setField((thisTemp), timeRead);
+			ThingSpeak.setCreatedAt(datetime);
 			ThingSpeak.writeFields(myChannelNumber[1], myWriteAPIKey[1]);
 			Serial.println("temp fields done");
 		}
